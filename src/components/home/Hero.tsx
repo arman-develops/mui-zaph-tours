@@ -1,5 +1,3 @@
-"use client"
-
 import { Box, Container, Typography, Button, Stack } from "@mui/material"
 import { Explore, FlightTakeoff } from "@mui/icons-material"
 import { useNavigate } from "react-router-dom"
