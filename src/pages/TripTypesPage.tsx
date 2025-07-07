@@ -1,77 +1,112 @@
-import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button, Chip, Stack } from "@mui/material"
-import { Hiking, DirectionsBoat, Groups, Favorite, CameraAlt, Terrain } from "@mui/icons-material"
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  CardMedia,
+  Button,
+  Chip,
+  Stack,
+  Divider,
+} from "@mui/material";
+import {
+  Hiking,
+  DirectionsBoat,
+  Groups,
+  Favorite,
+  CameraAlt,
+  Terrain,
+} from "@mui/icons-material";
 
 const tripTypes = [
   {
     title: "Adventure Tours",
     description:
       "For thrill-seekers and adrenaline junkies who want to push their limits and experience extreme activities.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "adventure.jpg",
     icon: <Hiking />,
     features: ["Rock Climbing", "White Water Rafting", "Bungee Jumping", "Zip Lining"],
     duration: "7-14 days",
     difficulty: "High",
+    price: "$1,200 – $2,000",
+    gallery: ["adventure1.jpg", "adventure2.jpg"],
   },
   {
     title: "Cultural Immersion",
     description:
       "Deep dive into local cultures, traditions, and ways of life with authentic experiences and local guides.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "culture.jpg",
     icon: <Groups />,
     features: ["Local Homestays", "Cooking Classes", "Traditional Crafts", "Cultural Festivals"],
     duration: "5-10 days",
     difficulty: "Low",
+    price: "$800 – $1,200",
+    gallery: ["culture1.jpg", "culture2.jpg"],
   },
   {
     title: "Luxury Escapes",
-    description: "Premium travel experiences with 5-star accommodations, private tours, and exclusive access.",
-    image: "/placeholder.svg?height=300&width=400",
+    description:
+      "Premium travel experiences with 5-star accommodations, private tours, and exclusive access.",
+    image: "luxury.jpg",
     icon: <Favorite />,
     features: ["5-Star Hotels", "Private Guides", "Exclusive Access", "Gourmet Dining"],
     duration: "7-21 days",
     difficulty: "Low",
+    price: "$3,000 – $6,000",
+    gallery: ["luxury1.jpg", "luxury2.jpg"],
   },
   {
     title: "Photography Tours",
-    description: "Capture stunning landscapes and wildlife with expert photography guides and perfect timing.",
-    image: "/placeholder.svg?height=300&width=400",
+    description:
+      "Capture stunning landscapes and wildlife with expert photography guides and perfect timing.",
+    image: "photography.jpg",
     icon: <CameraAlt />,
     features: ["Golden Hour Shoots", "Wildlife Photography", "Landscape Focus", "Expert Guidance"],
     duration: "5-12 days",
     difficulty: "Medium",
+    price: "$1,500 – $2,500",
+    gallery: ["photo1.jpg", "photo2.jpg"],
   },
   {
     title: "Eco Adventures",
-    description: "Sustainable travel experiences that support conservation efforts and local communities.",
-    image: "/placeholder.svg?height=300&width=400",
+    description:
+      "Sustainable travel experiences that support conservation efforts and local communities.",
+    image: "eco.jpg",
     icon: <Terrain />,
     features: ["Conservation Projects", "Sustainable Lodging", "Wildlife Protection", "Community Support"],
     duration: "7-14 days",
     difficulty: "Medium",
+    price: "$900 – $1,800",
+    gallery: ["eco1.jpg", "eco2.jpg"],
   },
   {
     title: "Ocean Expeditions",
-    description: "Explore marine life and coastal destinations with snorkeling, diving, and boat excursions.",
-    image: "/placeholder.svg?height=300&width=400",
+    description:
+      "Explore marine life and coastal destinations with snorkeling, diving, and boat excursions.",
+    image: "ocean.jpg",
     icon: <DirectionsBoat />,
     features: ["Scuba Diving", "Snorkeling", "Marine Wildlife", "Island Hopping"],
     duration: "5-10 days",
     difficulty: "Medium",
+    price: "$1,300 – $2,300",
+    gallery: ["ocean1.jpg", "ocean2.jpg"],
   },
-]
+];
 
 const getDifficultyColor = (difficulty: string) => {
   switch (difficulty) {
     case "Low":
-      return "success"
+      return "success";
     case "Medium":
-      return "warning"
+      return "warning";
     case "High":
-      return "error"
+      return "error";
     default:
-      return "default"
+      return "default";
   }
-}
+};
 
 export default function TripTypesPage() {
   return (
@@ -81,25 +116,34 @@ export default function TripTypesPage() {
           <Typography variant="h2" gutterBottom color="primary">
             Trip Types
           </Typography>
-          <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-            Choose from our diverse range of travel experiences, each designed to cater to different interests and
-            adventure levels.
+          <Typography
+            variant="h6"
+            color="text.secondary"
+            sx={{ maxWidth: 600, mx: "auto" }}
+          >
+            Choose from our diverse range of travel experiences, each designed
+            to cater to different interests and adventure levels.
           </Typography>
         </Box>
         <Grid container spacing={4}>
           {tripTypes.map((tripType, index) => (
-            <Grid  key={index}>
+            <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
               <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
-                <CardMedia component="img" height="200" image={tripType.image} alt={tripType.title} />
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={tripType.image}
+                  alt={tripType.title}
+                />
                 <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
                   <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                     <Box sx={{ color: "primary.main", mr: 1 }}>{tripType.icon}</Box>
                     <Typography variant="h5">{tripType.title}</Typography>
                   </Box>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 3, flexGrow: 1 }}>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
                     {tripType.description}
                   </Typography>
-                  <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
+                  <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
                     <Chip label={tripType.duration} size="small" />
                     <Chip
                       label={tripType.difficulty}
@@ -107,16 +151,21 @@ export default function TripTypesPage() {
                       color={getDifficultyColor(tripType.difficulty) as any}
                     />
                   </Stack>
-                  <Typography variant="subtitle2" sx={{ mb: 1 }}>
-                    Includes:
-                  </Typography>
-                  <Box sx={{ mb: 3 }}>
-                    {tripType.features.map((feature, featureIndex) => (
-                      <Typography key={featureIndex} variant="body2" color="text.secondary">
+                  <Divider sx={{ my: 2 }} />
+                  <Typography variant="subtitle2">Includes:</Typography>
+                  <Box sx={{ mb: 2 }}>
+                    {tripType.features.map((feature, i) => (
+                      <Typography key={i} variant="body2" color="text.secondary">
                         • {feature}
                       </Typography>
                     ))}
                   </Box>
+                  <Typography variant="subtitle2" sx={{ mb: 1 }}>
+                    Pricing:
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                    {tripType.price}
+                  </Typography>
                   <Button variant="contained" fullWidth sx={{ mt: "auto" }}>
                     Learn More
                   </Button>
@@ -127,5 +176,5 @@ export default function TripTypesPage() {
         </Grid>
       </Container>
     </Box>
-  )
+  );
 }
