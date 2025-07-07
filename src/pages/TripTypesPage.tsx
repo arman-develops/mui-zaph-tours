@@ -88,7 +88,7 @@ export default function TripTypesPage() {
         </Box>
         <Grid container spacing={4}>
           {tripTypes.map((tripType, index) => (
-            <Grid item xs={12} md={6} key={index}>
+            <Grid  key={index}>
               <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
                 <CardMedia component="img" height="200" image={tripType.image} alt={tripType.title} />
                 <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>

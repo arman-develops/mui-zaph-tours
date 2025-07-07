@@ -44,7 +44,7 @@ export default function Navbar() {
           <Explore sx={{ mr: 2 }} />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-              Adventure Tours
+              Zaph Tours
             </Link>
           </Typography>
           {isMobile ? (
@@ -56,8 +56,9 @@ export default function Navbar() {
               {navItems.map((item) => (
                 <Link key={item.label} to={item.href} style={{ textDecoration: "none" }}>
                   <Button
-                    color="inherit"
+                    
                     sx={{
+                      color: "background.default",
                       backgroundColor: location.pathname === item.href ? "rgba(255,255,255,0.1)" : "transparent",
                     }}
                   >

@@ -1,5 +1,17 @@
-import { Box, Container, Typography, Grid, Card, CardContent } from "@mui/material"
-import { Groups, Verified, SupportAgent, EmojiEvents } from "@mui/icons-material"
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+} from "@mui/material";
+import {
+  Groups,
+  Verified,
+  SupportAgent,
+  EmojiEvents,
+} from "@mui/icons-material";
 
 const features = [
   {
@@ -23,9 +35,10 @@ const features = [
   {
     icon: <EmojiEvents fontSize="large" />,
     title: "Award Winning",
-    description: "Recognized as the leading tour operator with multiple industry awards for excellence in service.",
+    description:
+      "Recognized as the leading tour operator with multiple industry awards for excellence in service.",
   },
-]
+];
 
 export function AboutUs() {
   return (
@@ -33,19 +46,34 @@ export function AboutUs() {
       <Container maxWidth="lg">
         <Box sx={{ textAlign: "center", mb: 6 }}>
           <Typography variant="h2" gutterBottom color="primary">
-            Why Choose Adventure Tours?
+            Why Choose Zaph Tours?
           </Typography>
-          <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-            We are passionate about creating extraordinary travel experiences that connect you with the world's most
-            amazing destinations.
+          <Typography
+            variant="h6"
+            color="text.secondary"
+            sx={{ maxWidth: 600, mx: "auto" }}
+          >
+            We are passionate about creating extraordinary travel experiences
+            that connect you with the world's most amazing destinations.
           </Typography>
         </Box>
         <Grid container spacing={4}>
           {features.map((feature, index) => (
-            <Grid item xs={12} md={6} lg={3} key={index}>
-              <Card sx={{ height: "100%", textAlign: "center", p: 2 }}>
+            <Grid key={index} size={{xs: 12, sm: 6, md: 3}}>
+              <Card
+                sx={{
+                  height: "100%",
+                  textAlign: "center",
+                  p: 2,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                elevation={3}
+              >
+                <Box sx={{ color: "primary.main", mb: 2 }}>{feature.icon}</Box>
                 <CardContent>
-                  <Box sx={{ color: "primary.main", mb: 2 }}>{feature.icon}</Box>
                   <Typography variant="h6" gutterBottom>
                     {feature.title}
                   </Typography>
@@ -59,5 +87,5 @@ export function AboutUs() {
         </Grid>
       </Container>
     </Box>
-  )
+  );
 }

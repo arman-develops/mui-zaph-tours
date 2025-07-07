@@ -41,7 +41,7 @@ export default function DestinationsPage() {
         </Box>
         <Grid container spacing={4}>
           {filteredDestinations.map((destination) => (
-            <Grid item xs={12} md={6} lg={4} key={destination.id}>
+            <Grid  key={destination.id}>
               <DestinationCard destination={destination} />
             </Grid>
           ))}

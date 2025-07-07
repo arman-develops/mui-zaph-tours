@@ -11,7 +11,7 @@ export function Hero() {
         minHeight: "80vh",
         display: "flex",
         alignItems: "center",
-        background: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/placeholder.svg?height=800&width=1200)",
+        background: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/hero.jpg)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "white",
@@ -20,7 +20,7 @@ export function Hero() {
       <Container maxWidth="lg">
         <Box sx={{ maxWidth: 600 }}>
           <Typography variant="h1" gutterBottom>
-            Discover Your Next Adventure
+            Explore The World With Us
           </Typography>
           <Typography variant="h5" sx={{ mb: 4, opacity: 0.9 }}>
             Explore breathtaking destinations around the world with our expertly guided tours and unforgettable
