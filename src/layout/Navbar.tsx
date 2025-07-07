@@ -5,7 +5,7 @@ import {
     Button,
     Drawer
 } from "@mui/material";
-import {Menu as MenuIcon, Explore} as '@mui/icons-material'
+import {Menu as MenuIcon, Explore} from '@mui/icons-material'
 import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { navItems } from "../data/navBarItems";
