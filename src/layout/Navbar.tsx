@@ -8,8 +8,7 @@ import {
 import {Menu as MenuIcon, Explore} from '@mui/icons-material'
 import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
-import { navItems } from "../data/navBarItems";
-
+import { navItems } from "../data/navbarItems";
 export default function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false)
     const theme = useTheme()
