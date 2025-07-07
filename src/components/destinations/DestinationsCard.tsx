@@ -1,5 +1,3 @@
-"use client"
-
 import { Card, CardMedia, CardContent, Typography, Button, Chip, Stack } from "@mui/material"
 import { Group, Person, ArrowForward } from "@mui/icons-material"
 
