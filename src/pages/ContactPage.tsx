@@ -1,28 +1,40 @@
 import type React from "react"
 import { useState } from "react"
-import { Box, Container, Typography, Grid, Card, CardContent, TextField, Button, Stack } from "@mui/material"
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  TextField,
+  Button,
+  Stack,
+  ImageList,
+  ImageListItem,
+} from "@mui/material"
 import { Email, Phone, LocationOn, AccessTime } from "@mui/icons-material"
 
 const contactInfo = [
   {
     icon: <Email />,
     title: "Email Us",
-    details: ["info@adventuretours.com", "bookings@adventuretours.com"],
+    details: ["info@zaph.tours", "bookings@zaph.tours"],
   },
   {
     icon: <Phone />,
     title: "Call Us",
-    details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
+    details: ["+254 700 123456", "+254 721 987654"],
   },
   {
     icon: <LocationOn />,
     title: "Visit Us",
-    details: ["123 Adventure Street", "Travel City, TC 12345"],
+    details: ["1st Floor, Zaph Plaza", "Moi Avenue, Nairobi"],
   },
   {
     icon: <AccessTime />,
     title: "Office Hours",
-    details: ["Mon-Fri: 9:00 AM - 6:00 PM", "Sat-Sun: 10:00 AM - 4:00 PM"],
+    details: ["Mon-Fri: 9:00 AM - 6:00 PM", "Sat: 10:00 AM - 4:00 PM"],
   },
 ]
 
@@ -68,13 +80,13 @@ export default function ContactPage() {
         </Box>
 
         <Grid container spacing={6}>
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h4" gutterBottom sx={{ mb: 4 }}>
               Get In Touch
             </Typography>
             <Grid container spacing={3}>
               {contactInfo.map((info, index) => (
-                <Grid item xs={12} sm={6} key={index}>
+                <Grid key={index} size={{ xs: 12 }}>
                   <Card sx={{ height: "100%" }}>
                     <CardContent sx={{ textAlign: "center", p: 3 }}>
                       <Box sx={{ color: "primary.main", mb: 2 }}>{info.icon}</Box>
@@ -92,8 +104,7 @@ export default function ContactPage() {
               ))}
             </Grid>
           </Grid>
-
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Card>
               <CardContent sx={{ p: 4 }}>
                 <Typography variant="h4" gutterBottom sx={{ mb: 3 }}>

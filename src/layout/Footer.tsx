@@ -15,7 +15,7 @@ export function Footer() {
     >
       <Container maxWidth="lg">
         <Grid container spacing={4}>
-          <Grid item xs={12} md={4}>
+          <Grid>
             <Typography variant="h6" gutterBottom>
               Adventure Tours
             </Typography>
@@ -34,7 +34,7 @@ export function Footer() {
               </IconButton>
             </Box>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid >
             <Typography variant="h6" gutterBottom>
               Quick Links
             </Typography>
@@ -53,13 +53,13 @@ export function Footer() {
               </Link>
             </Box>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid>
             <Typography variant="h6" gutterBottom>
               Contact Info
             </Typography>
             <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
               <Email sx={{ mr: 1, fontSize: 20 }} />
-              <Typography variant="body2">info@adventuretours.com</Typography>
+              <Typography variant="body2">info@zaphtours.com</Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
               <Phone sx={{ mr: 1, fontSize: 20 }} />
@@ -67,7 +67,7 @@ export function Footer() {
             </Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <LocationOn sx={{ mr: 1, fontSize: 20 }} />
-              <Typography variant="body2">123 Adventure St, Travel City</Typography>
+              <Typography variant="body2">123 zaph St, Travel City</Typography>
             </Box>
           </Grid>
         </Grid>

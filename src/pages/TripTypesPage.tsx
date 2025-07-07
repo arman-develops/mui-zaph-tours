@@ -10,6 +10,8 @@ import {
   Chip,
   Stack,
   Divider,
+  ImageList,
+  ImageListItem,
 } from "@mui/material";
 import {
   Hiking,
@@ -121,40 +123,39 @@ export default function TripTypesPage() {
             color="text.secondary"
             sx={{ maxWidth: 600, mx: "auto" }}
           >
-            Choose from our diverse range of travel experiences, each designed
-            to cater to different interests and adventure levels.
+            Choose your experience from our wide range of trip types.
           </Typography>
         </Box>
         <Grid container spacing={4}>
-          {tripTypes.map((tripType, index) => (
+          {tripTypes.map((trip, index) => (
             <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
               <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
                 <CardMedia
                   component="img"
                   height="200"
-                  image={tripType.image}
-                  alt={tripType.title}
+                  image={trip.image}
+                  alt={trip.title}
                 />
-                <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
+                <CardContent sx={{ flexGrow: 1 }}>
                   <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                    <Box sx={{ color: "primary.main", mr: 1 }}>{tripType.icon}</Box>
-                    <Typography variant="h5">{tripType.title}</Typography>
+                    <Box sx={{ color: "primary.main", mr: 1 }}>{trip.icon}</Box>
+                    <Typography variant="h5">{trip.title}</Typography>
                   </Box>
                   <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                    {tripType.description}
+                    {trip.description}
                   </Typography>
                   <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
-                    <Chip label={tripType.duration} size="small" />
+                    <Chip label={trip.duration} size="small" />
                     <Chip
-                      label={tripType.difficulty}
+                      label={trip.difficulty}
                       size="small"
-                      color={getDifficultyColor(tripType.difficulty) as any}
+                      color={getDifficultyColor(trip.difficulty) as any}
                     />
                   </Stack>
                   <Divider sx={{ my: 2 }} />
                   <Typography variant="subtitle2">Includes:</Typography>
                   <Box sx={{ mb: 2 }}>
-                    {tripType.features.map((feature, i) => (
+                    {trip.features.map((feature, i) => (
                       <Typography key={i} variant="body2" color="text.secondary">
                         • {feature}
                       </Typography>
@@ -164,9 +165,26 @@ export default function TripTypesPage() {
                     Pricing:
                   </Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                    {tripType.price}
+                    {trip.price}
                   </Typography>
-                  <Button variant="contained" fullWidth sx={{ mt: "auto" }}>
+
+                  <Typography variant="subtitle2" sx={{ mb: 1 }}>
+                    Gallery:
+                  </Typography>
+                  <ImageList cols={3} gap={8} sx={{ mb: 2 }}>
+                    {trip.gallery.map((img, i) => (
+                      <ImageListItem key={i}>
+                        <img
+                          src={img}
+                          alt={`${trip.title} ${i + 1}`}
+                          loading="lazy"
+                          style={{ borderRadius: 4 }}
+                        />
+                      </ImageListItem>
+                    ))}
+                  </ImageList>
+
+                  <Button variant="contained" fullWidth>
                     Learn More
                   </Button>
                 </CardContent>
