@@ -10,8 +10,6 @@ import {
   Chip,
   Stack,
   Divider,
-  ImageList,
-  ImageListItem,
 } from "@mui/material";
 import {
   Hiking,
@@ -33,7 +31,6 @@ const tripTypes = [
     duration: "7-14 days",
     difficulty: "High",
     price: "$1,200 – $2,000",
-    gallery: ["adventure1.jpg", "adventure2.jpg"],
   },
   {
     title: "Cultural Immersion",
@@ -45,7 +42,6 @@ const tripTypes = [
     duration: "5-10 days",
     difficulty: "Low",
     price: "$800 – $1,200",
-    gallery: ["culture1.jpg", "culture2.jpg"],
   },
   {
     title: "Luxury Escapes",
@@ -57,7 +53,6 @@ const tripTypes = [
     duration: "7-21 days",
     difficulty: "Low",
     price: "$3,000 – $6,000",
-    gallery: ["luxury1.jpg", "luxury2.jpg"],
   },
   {
     title: "Photography Tours",
@@ -69,7 +64,6 @@ const tripTypes = [
     duration: "5-12 days",
     difficulty: "Medium",
     price: "$1,500 – $2,500",
-    gallery: ["photo1.jpg", "photo2.jpg"],
   },
   {
     title: "Eco Adventures",
@@ -81,7 +75,6 @@ const tripTypes = [
     duration: "7-14 days",
     difficulty: "Medium",
     price: "$900 – $1,800",
-    gallery: ["eco1.jpg", "eco2.jpg"],
   },
   {
     title: "Ocean Expeditions",
@@ -93,7 +86,6 @@ const tripTypes = [
     duration: "5-10 days",
     difficulty: "Medium",
     price: "$1,300 – $2,300",
-    gallery: ["ocean1.jpg", "ocean2.jpg"],
   },
 ];
 
@@ -171,18 +163,6 @@ export default function TripTypesPage() {
                   <Typography variant="subtitle2" sx={{ mb: 1 }}>
                     Gallery:
                   </Typography>
-                  <ImageList cols={3} gap={8} sx={{ mb: 2 }}>
-                    {trip.gallery.map((img, i) => (
-                      <ImageListItem key={i}>
-                        <img
-                          src={img}
-                          alt={`${trip.title} ${i + 1}`}
-                          loading="lazy"
-                          style={{ borderRadius: 4 }}
-                        />
-                      </ImageListItem>
-                    ))}
-                  </ImageList>
 
                   <Button variant="contained" fullWidth>
                     Learn More
