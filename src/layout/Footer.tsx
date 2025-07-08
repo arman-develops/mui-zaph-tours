@@ -17,7 +17,7 @@ export function Footer() {
         <Grid container spacing={4}>
           <Grid>
             <Typography variant="h6" gutterBottom>
-              Adventure Tours
+              Zaph Tours
             </Typography>
             <Typography variant="body2" sx={{ mb: 2 }}>
               Discover the world with our expertly crafted tours and unforgettable experiences.
